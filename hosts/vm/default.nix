@@ -1,7 +1,9 @@
-{
+{ 
   pkgs,
   config,
   lib,
+  options,
+  system,
   ...
 }:
 {
@@ -15,8 +17,12 @@
   # and configure GRUB instead.
   boot.loader.systemd-boot.enable = lib.mkForce false;
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = false;
+
+  security.sudo.wheelNeedsPassword = false;
+
+    # services.flatpak.enable = true; 
 
   # allow local remote access to make it easier to toy around with the system
   services.openssh = {

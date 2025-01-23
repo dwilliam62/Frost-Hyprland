@@ -2,19 +2,19 @@
 {
   programs = {
     steam = {
-      enable = true;
+      enable = false;
 
-      remotePlay.openFirewall = true;
+      remotePlay.openFirewall = false;
       dedicatedServer.openFirewall = false;
 
-      gamescopeSession.enable = true;
+      gamescopeSession.enable = false;
 
       extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
 
     gamescope = {
-      enable = true;
-      capSysNice = true;
+      enable = false;
+      capSysNice = false;
       args = [
         "--rt"
         "--expose-wayland"

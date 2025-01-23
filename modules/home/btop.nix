@@ -4,10 +4,11 @@
     enable = true;
 
     settings = {
-      color_theme = "TTY";
+      color_theme = "HotPurpleTrafficLight";
       theme_background = false;
       update_ms = 500;
       rounded_corners = false;
+      proc_tree = true;
     };
   };
 

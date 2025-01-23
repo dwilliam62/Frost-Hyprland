@@ -42,16 +42,12 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
-
-    zig.url = "github:mitchellh/zig-overlay";
-
-    nvf.url = "github:notashelf/nvf";
   };
 
   outputs =
     { nixpkgs, self, ... }@inputs:
     let
-      username = "frostphoenix";
+      username = "dwilliams";
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;

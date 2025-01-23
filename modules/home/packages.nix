@@ -22,11 +22,21 @@ in
     gifsicle                          # gif utility
     gtrash                            # rm replacement, put deleted files in system trash
     hexdump
+    bat
     htop
+    btop
+    glances
+    bottom
+    ncdu 
     imv                               # image viewer
     jq                                # JSON processor
     killall
     libnotify
+    lsd
+    luarocks
+    gcc
+    gnumake
+    cargo 
     man-pages                         # extra man pages
     mimeo
     mpv                               # video player
@@ -49,6 +59,7 @@ in
     todo                              # cli todo list
     toipe                             # typing test in the terminal
     ttyper                            # cli typing test
+    ugrep
     unzip
     valgrind                          # c memory analyzer
     wl-clipboard                      # clipboard utils for wayland (wl-copy, wl-paste)
@@ -64,6 +75,7 @@ in
     pipes                             # terminal screensaver
     sl
     tty-clock                         # cli clock
+    figlet
 
     ## GUI Apps
     audacity
@@ -87,10 +99,6 @@ in
     gcc
     gdb
     gnumake
-
-    # Zig
-    inputs.zig.packages.${system}.master
-    zls
 
     # Python
     python3

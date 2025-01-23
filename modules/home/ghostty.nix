@@ -13,7 +13,7 @@ in
   xdg.configFile."ghostty/config".text = ''
     # Font
     font-family = "Maple Mono"
-    font-size = ${if (host == "laptop") then "16" else "17"}
+    font-size = ${if (host == "laptop") then "12" else "12"}
     font-thicken = true
     font-feature = ss01
     font-feature = ss04
@@ -30,7 +30,7 @@ in
     adjust-cursor-thickness = 1
 
     resize-overlay = never
-    copy-on-select = false
+    copy-on-select = true
     confirm-close-surface = false
     mouse-hide-while-typing = true
 
@@ -51,6 +51,43 @@ in
     auto-update = off
     term = ghostty
     clipboard-paste-protection = false
+    
+    # keybindings
+    keybind = alt+s>r=reload_config
+    keybind = alt+s>x=close_surface
+
+    keybind = alt+s>n=new_window
+
+    # tabs
+    keybind = alt+s>c=new_tab
+    keybind = alt+s>shift+l=next_tab
+    keybind = alt+s>shift+h=previous_tab
+    keybind = alt+s>comma=move_tab:-1
+    keybind = alt+s>period=move_tab:1
+
+    # quick tab switch
+    keybind = alt+s>1=goto_tab:1
+    keybind = alt+s>2=goto_tab:2
+    keybind = alt+s>3=goto_tab:3
+    keybind = alt+s>4=goto_tab:4
+    keybind = alt+s>5=goto_tab:5
+    keybind = alt+s>6=goto_tab:6
+    keybind = alt+s>7=goto_tab:7
+    keybind = alt+s>8=goto_tab:8
+    keybind = alt+s>9=goto_tab:9
+
+    # split
+    keybind = alt+s>\=new_split:right
+    keybind = alt+s>-=new_split:down
+
+    keybind = alt+s>j=goto_split:bottom
+    keybind = alt+s>k=goto_split:top
+    keybind = alt+s>h=goto_split:left
+    keybind = alt+s>l=goto_split:right
+
+    keybind = alt+s>z=toggle_split_zoom
+
+    keybind = alt+s>e=equalize_splits
 
     keybind = shift+end=unbind
     keybind = shift+home=unbind
