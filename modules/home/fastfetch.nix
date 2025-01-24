@@ -9,7 +9,7 @@
         "source": "${../../.github/assets/logo/nixos-logo.png}",
         "type": "kitty-direct",
         "height": 15,
-        "width": 25,
+        "width": 30,
         "padding": {
           "top": 2
         }
