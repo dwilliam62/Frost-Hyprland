@@ -56,6 +56,8 @@ in
     tdf                               # cli pdf viewer
     treefmt2                          # project formatter
     tldr
+    tmux
+    lunarvim
     todo                              # cli todo list
     toipe                             # typing test in the terminal
     ttyper                            # cli typing test

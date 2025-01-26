@@ -1,6 +1,7 @@
 
 1-26-25
   - Updated flake
+  - Added tmux, lunarvim
 1-24-25
   - Updated flake
   - Fixed fasfetch logo sizing
