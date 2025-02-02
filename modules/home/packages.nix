@@ -10,9 +10,12 @@ in
     ani-cli
     binsider
     bitwise                           # cli tool for bit / hex manipulation
+    bottom
     caligula                          # User-friendly, lightweight TUI for disk imaging
+    cava
     dconf-editor
     docfd                             # TUI multiline fuzzy document finder
+    duf
     eza                               # ls replacement
     entr                              # perform action when file change
     fd                                # find replacement
@@ -22,12 +25,24 @@ in
     gifsicle                          # gif utility
     gtrash                            # rm replacement, put deleted files in system trash
     hexdump
+    hyfetch
+    pfetch
     bat
     htop
+    inxi
     btop
     glances
-    bottom
     ncdu 
+    iotop
+    ipfetch
+    microfetch
+    neofetch
+    ncftp
+    ouch
+    yazi
+    pfetch
+    stacer
+    mission-center
     imv                               # image viewer
     jq                                # JSON processor
     killall
@@ -70,6 +85,11 @@ in
     yt-dlp-light
     xdg-utils
     xxd
+    zellij
+    zoxide
+    nomacs
+    waypaper
+    pyprland
 
     ## CLI 
     cbonsai                           # terminal screensaver
@@ -83,15 +103,15 @@ in
     audacity
     bleachbit                         # cache cleaner
     gimp
-    libreoffice
+        #libreoffice
     nix-prefetch-github
-    obs-studio
+        #obs-studio
     pavucontrol                       # pulseaudio volume controle (GUI)
     pitivi                            # video editing
     gnome-calculator                  # calculator
     resources                         # GUI resources monitor
     soundwireserver
-    thunderbird
+        #thunderbird
     vlc
     winetricks
     wineWowPackages.wayland

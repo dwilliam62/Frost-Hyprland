@@ -16,12 +16,12 @@
         "swaync &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
-
+        #"pypr &"
         "hyprlock"
       ];
 
       input = {
-        kb_layout = "us,fr";
+        kb_layout = "us";
         kb_options = "grp:alt_caps_toggle";
         numlock_by_default = true;
         follow_mouse = 0;
@@ -139,7 +139,7 @@
         # keybindings
         "$mainMod, Return, exec, ghostty"
         "ALT, Return, exec, [float; size 1111 700] ghostty"
-        "$mainMod SHIFT, Return, exec, [fullscreen] ghostty"
+        "$mainMod CTRL, Return, exec, [fullscreen] ghostty"
         "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] zen'"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
@@ -166,6 +166,10 @@
         "$mainMod, equal, exec, woomer"
         # "$mainMod SHIFT, W, exec, vm-start"
 
+        #  Pyprland bindings
+        #"$mainMod SHIFT, V, exec, pypr toggle volume"
+        #"$mainMod SHIFT, ENTER exec, pypr toggle term"
+                
         # screenshot
         ",Print, exec, screenshot --copy"
         "$mainMod, Print, exec, screenshot --save"
