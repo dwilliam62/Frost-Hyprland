@@ -79,6 +79,7 @@ in
     ugrep
     unzip
     valgrind                          # c memory analyzer
+    vivaldi                           # browser
     wl-clipboard                      # clipboard utils for wayland (wl-copy, wl-paste)
     wget
     woomer

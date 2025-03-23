@@ -16,15 +16,14 @@
         "swaync &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
-
+        #"pypr &"
         "hyprlock"
       ];
 
       input = {
-        kb_layout = "us,fr";
+        kb_layout = "us";
         kb_options = "grp:alt_caps_toggle";
         numlock_by_default = true;
-        repeat_delay = 300;
         follow_mouse = 0;
         float_switch_override_focus = 0;
         mouse_refocus = 0;
@@ -37,12 +36,12 @@
       general = {
         "$mainMod" = "SUPER";
         layout = "dwindle";
-        gaps_in = 6;
-        gaps_out = 12;
+        gaps_in = 5;
+        gaps_out = 10;
         border_size = 2;
         "col.active_border" = "rgb(98971A) rgb(CC241D) 45deg";
         "col.inactive_border" = "0x00000000";
-        # border_part_of_window = false;
+                #border_part_of_window = false;
         no_border_on_floating = false;
       };
 
@@ -59,7 +58,8 @@
       };
 
       dwindle = {
-        force_split = 2;
+        # no_gaps_when_only = false;
+        force_split = 0;
         special_scale_factor = 1.0;
         split_width_multiplier = 1.0;
         use_active_for_splits = true;
@@ -70,6 +70,7 @@
       master = {
         new_status = "master";
         special_scale_factor = 1;
+        # no_gaps_when_only = false;
       };
 
       decoration = {
@@ -131,10 +132,6 @@
         ];
       };
 
-      binds = {
-        movefocus_cycles_fullscreen = true;
-      };
-
       bind = [
         # show keybinds list
         "$mainMod, F1, exec, show-keybinds"
@@ -142,7 +139,7 @@
         # keybindings
         "$mainMod, Return, exec, ghostty"
         "ALT, Return, exec, [float; size 1111 700] ghostty"
-        "$mainMod SHIFT, Return, exec, [fullscreen] ghostty"
+        "$mainMod CTRL, Return, exec, [fullscreen] ghostty"
         "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] zen'"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
@@ -165,36 +162,28 @@
         "$mainMod, W,exec, wallpaper-picker"
         "$mainMod SHIFT, W,exec, hyprctl dispatch exec '[float; size 925 615] waypaper'"
         "$mainMod, N, exec, swaync-client -t -sw"
-        "CTRL SHIFT, Escape, exec, hyprctl dispatch exec '[workspace 9] missioncenter'"
+        "CTRL SHIFT, Escape, exec, hyprctl dispatch exec '[workspace 11] resources'"
         "$mainMod, equal, exec, woomer"
         # "$mainMod SHIFT, W, exec, vm-start"
 
+        #  Pyprland bindings
+        #"$mainMod SHIFT, V, exec, pypr toggle volume"
+        #"$mainMod SHIFT, ENTER exec, pypr toggle term"
+                
         # screenshot
         ",Print, exec, screenshot --copy"
         "$mainMod, Print, exec, screenshot --save"
         "$mainMod SHIFT, Print, exec, screenshot --swappy"
 
         # switch focus
-        "$mainMod, left,  movefocus, l"
+        "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
-        "$mainMod, up,    movefocus, u"
-        "$mainMod, down,  movefocus, d"
+        "$mainMod, up, movefocus, u"
+        "$mainMod, down, movefocus, d"
         "$mainMod, h, movefocus, l"
         "$mainMod, j, movefocus, d"
         "$mainMod, k, movefocus, u"
         "$mainMod, l, movefocus, r"
-
-        "$mainMod, left,  alterzorder, top"
-        "$mainMod, right, alterzorder, top"
-        "$mainMod, up,    alterzorder, top"
-        "$mainMod, down,  alterzorder, top"
-        "$mainMod, h, alterzorder, top"
-        "$mainMod, j, alterzorder, top"
-        "$mainMod, k, alterzorder, top"
-        "$mainMod, l, alterzorder, top"
-
-        "CTRL ALT, up, exec, hyprctl dispatch focuswindow floating"
-        "CTRL ALT, down, exec, hyprctl dispatch focuswindow tiled"
 
         # switch workspace
         "$mainMod, 1, workspace, 1"
@@ -286,36 +275,40 @@
 
       # windowrule
       windowrule = [
-        "float,class:^(Viewnior)$"
-        "float,class:^(imv)$"
-        "float,class:^(mpv)$"
-        "tile,class:^(Aseprite)$"
-        "float,class:^(Audacious)$"
-        "pin,class:^(rofi)$"
-        "pin,class:^(waypaper)$"
-        # "idleinhibit focus,mpv"
-        # "float,udiskie"
+        "float,Viewnior"
+        "float,imv"
+        "float,mpv"
+        "tile,Aseprite"
+        "float,audacious"
+        "pin,rofi"
+        "pin,waypaper"
+        "tile, neovide"
+        "idleinhibit focus,mpv"
+        "float,udiskie"
         "float,title:^(Transmission)$"
         "float,title:^(Volume Control)$"
         "float,title:^(Firefox — Sharing Indicator)$"
         "move 0 0,title:^(Firefox — Sharing Indicator)$"
         "size 700 450,title:^(Volume Control)$"
         "move 40 55%,title:^(Volume Control)$"
+      ];
 
+      # windowrulev2
+      windowrulev2 = [
         "float, title:^(Picture-in-Picture)$"
         "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
         "pin, title:^(Picture-in-Picture)$"
-        "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
-        "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
+        "#opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
+        "#opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
         "opacity 1.0 override 1.0 override, class:(Aseprite)"
         "opacity 1.0 override 1.0 override, class:(Unity)"
         "opacity 1.0 override 1.0 override, class:(zen)"
-        "opacity 1.0 override 1.0 override, class:(evince)"
+        "o:wqpacity 1.0 override 1.0 override, class:(evince)"
         "workspace 1, class:^(zen)$"
         "workspace 3, class:^(evince)$"
         "workspace 4, class:^(Gimp-2.10)$"
-        "workspace 4, class:^(Aseprite)$"
-        "workspace 5, class:^(Audacious)$"
+        "#workspace 4, class:^(Aseprite)$"
+        "#workspace 5, class:^(Audacious)$"
         "workspace 5, class:^(Spotify)$"
         "workspace 8, class:^(com.obsproject.Studio)$"
         "workspace 10, class:^(discord)$"
@@ -326,9 +319,8 @@
         "float,class:^(waypaper)$"
         "float,class:^(zenity)$"
         "size 850 500,class:^(zenity)$"
-        "size 725 330,class:^(SoundWireServer)$"
         "float,class:^(org.gnome.FileRoller)$"
-        "float,class:^(org.pulseaudio.pavucontrol)$"
+        "float,class:^(pavucontrol)$"
         "float,class:^(SoundWireServer)$"
         "float,class:^(.sameboy-wrapped)$"
         "float,class:^(file_progress)$"
@@ -367,10 +359,6 @@
         "noblur,class:^()$,title:^()$"
       ];
 
-#       # windowrulev2
-#       windowrulev2 = [
-#       ];
-
       # No gaps when only
       workspace = [
         "w[t1], gapsout:0, gapsin:0"
@@ -380,7 +368,7 @@
     };
 
     extraConfig = "
-      monitor=,preferred,auto,auto
+      monitor=Virtual-1,2560x1440@75,auto,1
 
       xwayland {
         force_zero_scaling = true
